@@ -17,6 +17,8 @@ struct AppearanceView: View {
                 UserColorPicker(title: "Text", type: .beforeText, color: $userColors.beforeText)
             } header: {
                 Text("Before Schedule")
+            } footer: {
+                PreviewView(bg: userColors.beforeBG, text: userColors.beforeText)
             }
             
             Section {
@@ -25,6 +27,8 @@ struct AppearanceView: View {
                 UserColorPicker(title: "Text", type: .duringText, color: $userColors.duringText)
             } header: {
                 Text("During Schedule")
+            } footer: {
+                PreviewView(bg: userColors.duringBG, fg: userColors.duringFG, text: userColors.duringText)
             }
             
             Section {
@@ -32,6 +36,8 @@ struct AppearanceView: View {
                 UserColorPicker(title: "Text", type: .afterText, color: $userColors.afterText)
             } header: {
                 Text("After Schedule")
+            } footer: {
+                PreviewView(bg: userColors.afterBG, text: userColors.afterText)
             }
             
             Section {
@@ -40,6 +46,8 @@ struct AppearanceView: View {
                 UserColorPicker(title: "Text", type: .dayOffText, color: $userColors.dayOffText)
             } header: {
                 Text("Days Off")
+            } footer: {
+                PreviewView(bg: userColors.dayOffBG, fg: userColors.dayOffFG, text: userColors.dayOffText)
             }
         }
         .navigationTitle("Appearance")
@@ -66,6 +74,40 @@ struct AppearanceView: View {
                 
                 ColorPicker(title, selection: $color)
                     .labelsHidden()
+            }
+        }
+    }
+    
+    struct PreviewView: View {
+        let bg: Color
+        let fg: Color
+        let text: Color
+        
+        init(bg: Color, fg: Color = .clear, text: Color) {
+            self.bg = bg
+            self.fg = fg
+            self.text = text
+        }
+        
+        var body: some View {
+            HStack {
+                Spacer()
+                
+                ZStack {
+                    bg
+                    
+                    GeometryReader { geo in
+                        fg.frame(width: geo.size.width * 0.5)
+                    }
+                    
+                    Text("Preview")
+                        .font(.system(size: 20, weight: .semibold, design: .rounded))
+                        .foregroundColor(text)
+                }
+                .cornerRadius(20)
+                .frame(width: 100, height: 100)
+                
+                Spacer()
             }
         }
     }

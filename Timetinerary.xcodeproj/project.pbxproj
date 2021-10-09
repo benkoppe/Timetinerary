@@ -34,6 +34,11 @@
 		B51343572710CEAF000C7FA8 /* Color-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4EA7270ED14F00504953 /* Color-Extensions.swift */; };
 		B51343582710CEB0000C7FA8 /* Alert-TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4EAF270EDA7F00504953 /* Alert-TextField.swift */; };
 		B51343592710CEB3000C7FA8 /* DetentSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5134337271030AB000C7FA8 /* DetentSheet.swift */; };
+		B513435E271144A7000C7FA8 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B513435D271144A7000C7FA8 /* ContactView.swift */; };
+		B51343622711494F000C7FA8 /* SwiftUIMailView in Frameworks */ = {isa = PBXBuildFile; productRef = B51343612711494F000C7FA8 /* SwiftUIMailView */; };
+		B51343642711496C000C7FA8 /* Bundle-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51343632711496C000C7FA8 /* Bundle-Extensions.swift */; };
+		B513436627114C71000C7FA8 /* LicensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B513436527114C71000C7FA8 /* LicensesView.swift */; };
+		B513436827114CC3000C7FA8 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B513436727114CC3000C7FA8 /* AboutView.swift */; };
 		B5CB4E9B270E1F0900504953 /* TimeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4E9A270E1F0900504953 /* TimeTable.swift */; };
 		B5CB4E9D270E2C9500504953 /* TimelineWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4E9C270E2C9500504953 /* TimelineWeek.swift */; };
 		B5CB4E9F270E2D8300504953 /* TimeTableWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4E9E270E2D8300504953 /* TimeTableWeek.swift */; };
@@ -42,7 +47,6 @@
 		B5CB4EA5270ECD4B00504953 /* Array-AppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4EA4270ECD4B00504953 /* Array-AppStorage.swift */; };
 		B5CB4EA8270ED14F00504953 /* Color-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4EA7270ED14F00504953 /* Color-Extensions.swift */; };
 		B5CB4EAC270ED20200504953 /* SavedTablesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4EAB270ED20200504953 /* SavedTablesView.swift */; };
-		B5CB4EAE270ED27D00504953 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4EAD270ED27D00504953 /* PreferencesView.swift */; };
 		B5CB4EB0270EDA7F00504953 /* Alert-TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4EAF270EDA7F00504953 /* Alert-TextField.swift */; };
 		B5CB4EB2270F800700504953 /* TextIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4EB1270F800700504953 /* TextIcon.swift */; };
 		B5CB4EB4270F911700504953 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4EB3270F911700504953 /* TimeView.swift */; };
@@ -111,6 +115,11 @@
 		B51343482710CD01000C7FA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B513435A2710EA75000C7FA8 /* TimeWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TimeWidgetExtension.entitlements; sourceTree = "<group>"; };
 		B513435B2710EAF7000C7FA8 /* TimeWidgetExtensionRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TimeWidgetExtensionRelease.entitlements; sourceTree = "<group>"; };
+		B513435D271144A7000C7FA8 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
+		B513435F27114540000C7FA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B51343632711496C000C7FA8 /* Bundle-Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle-Extensions.swift"; sourceTree = "<group>"; };
+		B513436527114C71000C7FA8 /* LicensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensesView.swift; sourceTree = "<group>"; };
+		B513436727114CC3000C7FA8 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		B5CB4E9A270E1F0900504953 /* TimeTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTable.swift; sourceTree = "<group>"; };
 		B5CB4E9C270E2C9500504953 /* TimelineWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineWeek.swift; sourceTree = "<group>"; };
 		B5CB4E9E270E2D8300504953 /* TimeTableWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableWeek.swift; sourceTree = "<group>"; };
@@ -119,7 +128,6 @@
 		B5CB4EA4270ECD4B00504953 /* Array-AppStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array-AppStorage.swift"; sourceTree = "<group>"; };
 		B5CB4EA7270ED14F00504953 /* Color-Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color-Extensions.swift"; sourceTree = "<group>"; };
 		B5CB4EAB270ED20200504953 /* SavedTablesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTablesView.swift; sourceTree = "<group>"; };
-		B5CB4EAD270ED27D00504953 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 		B5CB4EAF270EDA7F00504953 /* Alert-TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert-TextField.swift"; sourceTree = "<group>"; };
 		B5CB4EB1270F800700504953 /* TextIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextIcon.swift; sourceTree = "<group>"; };
 		B5CB4EB3270F911700504953 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
@@ -130,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B51343622711494F000C7FA8 /* SwiftUIMailView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +196,7 @@
 		B50A6BB0270CDEC700E789E1 /* Timetinerary */ = {
 			isa = PBXGroup;
 			children = (
+				B513435F27114540000C7FA8 /* Info.plist */,
 				B50A6BE1270CDF3000E789E1 /* Timetinerary.entitlements */,
 				B50A6BB1270CDEC700E789E1 /* TimetineraryApp.swift */,
 				B50A6BB3270CDEC700E789E1 /* ContentView.swift */,
@@ -265,6 +275,7 @@
 				B5CB4EA7270ED14F00504953 /* Color-Extensions.swift */,
 				B5CB4EAF270EDA7F00504953 /* Alert-TextField.swift */,
 				B5134337271030AB000C7FA8 /* DetentSheet.swift */,
+				B51343632711496C000C7FA8 /* Bundle-Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -273,9 +284,11 @@
 			isa = PBXGroup;
 			children = (
 				B5CB4EA0270EC28900504953 /* SettingsView.swift */,
-				B5CB4EAD270ED27D00504953 /* PreferencesView.swift */,
 				B51343322710043F000C7FA8 /* AppearanceView.swift */,
 				B5CB4EAB270ED20200504953 /* SavedTablesView.swift */,
+				B513436727114CC3000C7FA8 /* AboutView.swift */,
+				B513435D271144A7000C7FA8 /* ContactView.swift */,
+				B513436527114C71000C7FA8 /* LicensesView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -316,6 +329,7 @@
 			);
 			name = Timetinerary;
 			packageProductDependencies = (
+				B51343612711494F000C7FA8 /* SwiftUIMailView */,
 			);
 			productName = Timetiniery;
 			productReference = B50A6BAE270CDEC700E789E1 /* Timetinerary.app */;
@@ -410,6 +424,7 @@
 			);
 			mainGroup = B50A6BA5270CDEC700E789E1;
 			packageReferences = (
+				B51343602711494F000C7FA8 /* XCRemoteSwiftPackageReference "swiftui-mail-view" */,
 			);
 			productRefGroup = B50A6BAF270CDEC700E789E1 /* Products */;
 			projectDirPath = "";
@@ -462,12 +477,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B513436627114C71000C7FA8 /* LicensesView.swift in Sources */,
 				B5CB4E9D270E2C9500504953 /* TimelineWeek.swift in Sources */,
+				B513436827114CC3000C7FA8 /* AboutView.swift in Sources */,
+				B51343642711496C000C7FA8 /* Bundle-Extensions.swift in Sources */,
 				B5CB4EA5270ECD4B00504953 /* Array-AppStorage.swift in Sources */,
 				B5CB4EA1270EC28900504953 /* SettingsView.swift in Sources */,
+				B513435E271144A7000C7FA8 /* ContactView.swift in Sources */,
 				B5CB4EB4270F911700504953 /* TimeView.swift in Sources */,
 				B51343332710043F000C7FA8 /* AppearanceView.swift in Sources */,
-				B5CB4EAE270ED27D00504953 /* PreferencesView.swift in Sources */,
 				B5CB4EB2270F800700504953 /* TextIcon.swift in Sources */,
 				B50A6BB4270CDEC700E789E1 /* ContentView.swift in Sources */,
 				B5CB4E9F270E2D8300504953 /* TimeTableWeek.swift in Sources */,
@@ -669,6 +687,7 @@
 				DEVELOPMENT_TEAM = T8PATWK92J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Timetinerary/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -702,6 +721,7 @@
 				DEVELOPMENT_TEAM = T8PATWK92J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Timetinerary/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -923,6 +943,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B51343602711494F000C7FA8 /* XCRemoteSwiftPackageReference "swiftui-mail-view" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/globulus/swiftui-mail-view";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B51343612711494F000C7FA8 /* SwiftUIMailView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B51343602711494F000C7FA8 /* XCRemoteSwiftPackageReference "swiftui-mail-view" */;
+			productName = SwiftUIMailView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B50A6BA6270CDEC700E789E1 /* Project object */;
 }

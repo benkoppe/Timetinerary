@@ -18,6 +18,10 @@ struct TimeView: View {
         timelineWeek.getTimeline(date: date)
     }
     
+    var moment: TimelineMoment {
+        timeline.getMoment(at: date)
+    }
+    
     let timer = Timer.publish(every: 0.1, on: .current, in: .common).autoconnect()
     
     var body: some View {
@@ -26,7 +30,7 @@ struct TimeView: View {
                 Text("\(date)")
                     .hidden()
                 
-                switch timeline.getMoment(at: Date()) {
+                switch moment {
                 case .conflicts:
                     ConflictsView()
                 case .before(let firstItem):
@@ -36,7 +40,7 @@ struct TimeView: View {
                 case .during(let item, let nextItem):
                     DuringView(item: item, nextItem: nextItem)
                 case .empty:
-                    DayOffView(daysSince: timelineWeek.daysTill(date: date, direction: .backward), daysUntil: timelineWeek.daysTill(date: date, direction: .backward))
+                    DayOffView(daysSince: timelineWeek.daysTill(date: date, direction: .backward), daysUntil: timelineWeek.daysTill(date: date, direction: .forward))
                 }
             }
             .offset(x: 0, y: -20)
@@ -54,8 +58,8 @@ struct TimeView: View {
     
     struct DuringView: View {
         @EnvironmentObject var userColors: UserColors
-        @StateObject var item: TimelineItem
-        @StateObject var nextItem: TimelineItem
+        let item: TimelineItem
+        let nextItem: TimelineItem
         
         @State private var date = Date()
         let timer = Timer.publish(every: 0.1, on: .current, in: .common).autoconnect()

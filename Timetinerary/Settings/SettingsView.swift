@@ -13,18 +13,31 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             Form {
-                SettingsItem(name: "Preferences", systemImage: "gear", background: .gray) {
-                    PreferencesView()
-                }
-                
-                SettingsItem(name: "Appearance", systemImage: "paintpalette", background: .red) {
-                    AppearanceView()
-                }
                 
                 Section {
+                    SettingsItem(name: "Appearance", systemImage: "paintpalette", background: .red) {
+                        AppearanceView()
+                    }
+                    
                     SettingsItem(name: "Saved Tables", systemImage: "square.and.arrow.down", background: .blue) {
                         SavedTablesView()
                     }
+                } header: {
+                    Text("Preferences")
+                }
+                
+                Section {
+                    SettingsItem(name: "About", systemImage: "info.circle", background: .indigo) {
+                        AboutView()
+                    }
+                    SettingsItem(name: "Contact", systemImage: "at", background: .green) {
+                        ContactView()
+                    }
+                    SettingsItem(name: "Licenses", systemImage: "text.justifyleft", background: Color("Brown")) {
+                        LicensesView()
+                    }
+                } header: {
+                    Text("About")
                 }
             }
             .navigationTitle("Settings")

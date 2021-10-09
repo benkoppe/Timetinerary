@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct TimeTableWeek: View {
     @State private var weekDay: WeekDays = .M
@@ -50,6 +51,7 @@ struct TimeTableWeek: View {
             }
             .onOpenURL { url in
                 if let scheme = url.scheme, scheme == "widget" {
+                    WidgetCenter.shared.reloadAllTimelines()
                     showingTime = true
                 }
             }

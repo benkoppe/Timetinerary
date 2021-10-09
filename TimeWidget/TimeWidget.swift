@@ -21,17 +21,51 @@ struct Provider: TimelineProvider {
     }
 
     func getTimeline(in context: Context, completion: @escaping (WidgetTimeline<Entry>) -> ()) {
-//        var entries: [Entry] = []
-//
-//        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-//        let currentDate = Date()
-//        for hourOffset in 0 ..< 5 {
-//            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-//            let entry = Entry(date: entryDate, timelineWeek: TimelineWeek(), userColors: UserColors())
-//            entries.append(entry)
-//        }
-        let entry = Entry(date: Date(), timelineWeek: TimelineWeek(), userColors: UserColors())
-        let timeline = WidgetTimeline(entries: [entry], policy: .atEnd)
+        var entries: [Entry] = []
+        let policy: TimelineReloadPolicy = .atEnd
+        
+        let calendar = Calendar.current
+        let date = Date()
+        let timelineWeek = TimelineWeek()
+        let userColors = UserColors()
+        let moment = timelineWeek.getTimeline(date: date).getMoment(at: date)
+        
+        var refreshDate: Date? = nil
+        
+        entries.append(Entry(date: Date(), timelineWeek: timelineWeek, userColors: userColors))
+        
+        switch moment {
+        case .conflicts:
+            return
+        case .before(let firstItem):
+            refreshDate = firstItem.getDate()
+        case .after:
+            let unshiftedDate = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: date)!
+            refreshDate = calendar.date(byAdding: .day, value: 1, to: unshiftedDate)
+        case .during(_, let nextItem):
+            refreshDate = nextItem.getDate()
+        case .empty:
+            if let daysUntil = timelineWeek.daysTill(date: date, direction: .forward), daysUntil > 0 {
+                let unshiftedDate = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: date)!
+                refreshDate = calendar.date(byAdding: .day, value: daysUntil, to: unshiftedDate)
+            } else {
+                let unshiftedDate = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: date)!
+                refreshDate = calendar.date(byAdding: .day, value: 1, to: unshiftedDate)
+            }
+        }
+        
+        if let refreshDate = refreshDate {
+            let difference = Int(refreshDate.timeIntervalSince(date))
+            let iterations = 5
+            let interval = difference / iterations
+            
+            for addAmount in stride(from: interval, to: difference, by: interval) {
+                let entryDate = calendar.date(byAdding: .second, value: addAmount, to: date)!
+                entries.append(Entry(date: entryDate, timelineWeek: timelineWeek, userColors: userColors))
+            }
+        }
+        
+        let timeline = WidgetTimeline(entries: entries, policy: policy)
         completion(timeline)
     }
 }
@@ -62,7 +96,7 @@ struct TimeWidgetEntryView : View {
                 DuringView(item: item, nextItem: nextItem, date: entry.date)
             case .empty:
                 let daysSince = entry.timelineWeek.daysTill(date: entry.date, direction: .backward)
-                let daysUntil = entry.timelineWeek.daysTill(date: entry.date, direction: .backward)
+                let daysUntil = entry.timelineWeek.daysTill(date: entry.date, direction: .forward)
                 DayOffView(daysSince: daysSince, daysUntil: daysUntil, date: entry.date)
             }
         }
