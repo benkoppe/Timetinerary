@@ -61,7 +61,6 @@ struct Provider: TimelineProvider {
             
             for addAmount in stride(from: interval, to: difference, by: interval) {
                 let entryDate = calendar.date(byAdding: .second, value: addAmount, to: date)!
-                print(addAmount)
                 entries.append(Entry(date: entryDate, timelineWeek: timelineWeek, userColors: userColors))
             }
         }
