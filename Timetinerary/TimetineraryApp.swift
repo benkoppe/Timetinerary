@@ -9,10 +9,14 @@ import SwiftUI
 
 @main
 struct TimetineraryApp: App {
+    @AppStorage("showLanding", store: UserDefaults(suiteName: "group.com.benk.timetinerary")) var showLanding: Bool = true
     
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .sheet(isPresented: $showLanding) {
+                    BoardingView()
+                }
         }
     }
 }

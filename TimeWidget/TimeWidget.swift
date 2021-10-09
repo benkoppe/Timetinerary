@@ -380,8 +380,8 @@ struct TimeWidget: Widget {
             TimeWidgetEntryView(entry: entry)
                 .widgetURL(URL(string: "widget://")!)
         }
-        .configurationDisplayName("Timetinerary")
-        .description("Displays your current timeline.")
+        .configurationDisplayName("Timeline")
+        .description("See your current timeline block.")
         .supportedFamilies([.systemSmall])
     }
 }

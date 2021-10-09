@@ -39,6 +39,7 @@
 		B51343642711496C000C7FA8 /* Bundle-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51343632711496C000C7FA8 /* Bundle-Extensions.swift */; };
 		B513436627114C71000C7FA8 /* LicensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B513436527114C71000C7FA8 /* LicensesView.swift */; };
 		B513436827114CC3000C7FA8 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B513436727114CC3000C7FA8 /* AboutView.swift */; };
+		B513436B27121BAF000C7FA8 /* BoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B513436A27121BAF000C7FA8 /* BoardingView.swift */; };
 		B5CB4E9B270E1F0900504953 /* TimeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4E9A270E1F0900504953 /* TimeTable.swift */; };
 		B5CB4E9D270E2C9500504953 /* TimelineWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4E9C270E2C9500504953 /* TimelineWeek.swift */; };
 		B5CB4E9F270E2D8300504953 /* TimeTableWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4E9E270E2D8300504953 /* TimeTableWeek.swift */; };
@@ -120,6 +121,7 @@
 		B51343632711496C000C7FA8 /* Bundle-Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle-Extensions.swift"; sourceTree = "<group>"; };
 		B513436527114C71000C7FA8 /* LicensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensesView.swift; sourceTree = "<group>"; };
 		B513436727114CC3000C7FA8 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		B513436A27121BAF000C7FA8 /* BoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingView.swift; sourceTree = "<group>"; };
 		B5CB4E9A270E1F0900504953 /* TimeTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTable.swift; sourceTree = "<group>"; };
 		B5CB4E9C270E2C9500504953 /* TimelineWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineWeek.swift; sourceTree = "<group>"; };
 		B5CB4E9E270E2D8300504953 /* TimeTableWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableWeek.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				B50A6BE1270CDF3000E789E1 /* Timetinerary.entitlements */,
 				B50A6BB1270CDEC700E789E1 /* TimetineraryApp.swift */,
 				B50A6BB3270CDEC700E789E1 /* ContentView.swift */,
+				B513436927121B8C000C7FA8 /* Boarding */,
 				B5CB4EB5270F911A00504953 /* Time */,
 				B5CB4EAA270ED1DE00504953 /* Time Tables */,
 				B5CB4EA9270ED1D200504953 /* Settings */,
@@ -265,6 +268,14 @@
 				B51343482710CD01000C7FA8 /* Info.plist */,
 			);
 			path = TimeWidget;
+			sourceTree = "<group>";
+		};
+		B513436927121B8C000C7FA8 /* Boarding */ = {
+			isa = PBXGroup;
+			children = (
+				B513436A27121BAF000C7FA8 /* BoardingView.swift */,
+			);
+			path = Boarding;
 			sourceTree = "<group>";
 		};
 		B5CB4EA6270ECD5300504953 /* Extensions */ = {
@@ -492,6 +503,7 @@
 				B5134331270FF739000C7FA8 /* UserColors.swift in Sources */,
 				B5CB4EB0270EDA7F00504953 /* Alert-TextField.swift in Sources */,
 				B5CB4E9B270E1F0900504953 /* TimeTable.swift in Sources */,
+				B513436B27121BAF000C7FA8 /* BoardingView.swift in Sources */,
 				B5134338271030AB000C7FA8 /* DetentSheet.swift in Sources */,
 				B5CB4EA8270ED14F00504953 /* Color-Extensions.swift in Sources */,
 				B5CB4EA3270EC3B400504953 /* Week.swift in Sources */,
@@ -682,12 +694,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Timetinerary/Timetinerary.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Timetinerary/Preview Content\"";
 				DEVELOPMENT_TEAM = T8PATWK92J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Timetinerary/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Timetinerary;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -716,12 +729,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Timetinerary/Timetinerary.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Timetinerary/Preview Content\"";
 				DEVELOPMENT_TEAM = T8PATWK92J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Timetinerary/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Timetinerary;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -845,7 +859,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = TimeWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = T8PATWK92J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TimeWidget/Info.plist;
@@ -873,7 +887,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = TimeWidgetExtensionRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = T8PATWK92J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TimeWidget/Info.plist;
