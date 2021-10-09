@@ -55,12 +55,13 @@ struct Provider: TimelineProvider {
         }
         
         if let refreshDate = refreshDate {
-            let difference = Int(refreshDate.timeIntervalSince(date))
+            let difference = Int(refreshDate.timeIntervalSince(date)) + 10
             let iterations = 5
             let interval = difference / iterations
             
             for addAmount in stride(from: interval, to: difference, by: interval) {
                 let entryDate = calendar.date(byAdding: .second, value: addAmount, to: date)!
+                print(addAmount)
                 entries.append(Entry(date: entryDate, timelineWeek: timelineWeek, userColors: userColors))
             }
         }
