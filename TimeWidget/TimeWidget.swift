@@ -344,6 +344,7 @@ struct TimeWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: provider) { entry in
             TimeWidgetEntryView(entry: entry)
+                .widgetURL(URL(string: "widget://")!)
         }
         .configurationDisplayName("Timetinerary")
         .description("Displays your current timeline.")

@@ -48,6 +48,11 @@ struct TimeTableWeek: View {
                 weekDay = WeekDays.fromDate(Date())
                 timelineWeek.objectWillChange.send()
             }
+            .onOpenURL { url in
+                if let scheme = url.scheme, scheme == "widget" {
+                    showingTime = true
+                }
+            }
             .toolbar {
                 ToolbarItem(placement: .bottomBar) {
                     Picker("Week Day", selection: $weekDay) {

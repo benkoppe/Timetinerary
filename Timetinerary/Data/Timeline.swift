@@ -121,12 +121,12 @@ class Timeline: ObservableObject, Identifiable {
 func sampleTimeline() -> Timeline {
     var items: [TimelineItem] = []
     
-    items.append(TimelineItem(name: "", hour: 7, minute: 0))
-    items.append(TimelineItem(name: "", hour: 8, minute: 00))
-    items.append(TimelineItem(name: "", hour: 9, minute: 00))
-    items.append(TimelineItem(name: "", hour: 10, minute: 00))
-    items.append(TimelineItem(name: "", hour: 11, minute: 00))
-    items.append(TimelineItem(name: "", hour: 12, minute: 00))
+    items.append(TimelineItem(name: "Period 1", hour: 7, minute: 00))
+    items.append(TimelineItem(name: "Period 3", hour: 8, minute: 00))
+    items.append(TimelineItem(name: "Atech Time", hour: 9, minute: 00))
+    items.append(TimelineItem(name: "Lunch", hour: 10, minute: 00))
+    items.append(TimelineItem(name: "Period 5", hour: 11, minute: 00))
+    items.append(TimelineItem(name: "Period 7", hour: 12, minute: 00))
     
     return Timeline(items: items)
 }
