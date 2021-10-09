@@ -46,6 +46,7 @@ struct TimeTableWeek: View {
             .navigationTitle("\(weekDayName(for: weekDay))")
             .onAppear {
                 weekDay = WeekDays.fromDate(Date())
+                timelineWeek.objectWillChange.send()
             }
             .toolbar {
                 ToolbarItem(placement: .bottomBar) {

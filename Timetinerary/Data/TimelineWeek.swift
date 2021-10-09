@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import WidgetKit
 
 class TimelineWeek: ObservableObject, Identifiable {
     @Published var week: [Timeline]
@@ -36,6 +37,7 @@ class TimelineWeek: ObservableObject, Identifiable {
         for timeline in week {
             timeline.save()
         }
+        WidgetCenter.shared.reloadAllTimelines()
     }
     
     func getTimeline(day: WeekDays) -> Timeline {

@@ -11,14 +11,29 @@
 		B50A6BB4270CDEC700E789E1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50A6BB3270CDEC700E789E1 /* ContentView.swift */; };
 		B50A6BB6270CDEC800E789E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B50A6BB5270CDEC800E789E1 /* Assets.xcassets */; };
 		B50A6BB9270CDEC800E789E1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B50A6BB8270CDEC800E789E1 /* Preview Assets.xcassets */; };
-		B50A6BC3270CDEC800E789E1 /* TimetinieryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50A6BC2270CDEC800E789E1 /* TimetinieryTests.swift */; };
-		B50A6BCD270CDEC800E789E1 /* TimetinieryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50A6BCC270CDEC800E789E1 /* TimetinieryUITests.swift */; };
-		B50A6BCF270CDEC800E789E1 /* TimetinieryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50A6BCE270CDEC800E789E1 /* TimetinieryUITestsLaunchTests.swift */; };
+		B50A6BC3270CDEC800E789E1 /* TimetineraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50A6BC2270CDEC800E789E1 /* TimetineraryTests.swift */; };
+		B50A6BCD270CDEC800E789E1 /* TimetineraryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50A6BCC270CDEC800E789E1 /* TimetineraryUITests.swift */; };
+		B50A6BCF270CDEC800E789E1 /* TimetineraryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50A6BCE270CDEC800E789E1 /* TimetineraryUITestsLaunchTests.swift */; };
 		B50A6BE0270CDED700E789E1 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50A6BDD270CDED700E789E1 /* Timeline.swift */; };
 		B50A6BEC270E123700E789E1 /* TimelineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50A6BEB270E123700E789E1 /* TimelineItem.swift */; };
 		B5134331270FF739000C7FA8 /* UserColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5134330270FF739000C7FA8 /* UserColors.swift */; };
 		B51343332710043F000C7FA8 /* AppearanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51343322710043F000C7FA8 /* AppearanceView.swift */; };
 		B5134338271030AB000C7FA8 /* DetentSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5134337271030AB000C7FA8 /* DetentSheet.swift */; };
+		B51343402710CD00000C7FA8 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B513433F2710CD00000C7FA8 /* WidgetKit.framework */; };
+		B51343422710CD00000C7FA8 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B51343412710CD00000C7FA8 /* SwiftUI.framework */; };
+		B51343452710CD00000C7FA8 /* TimeWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51343442710CD00000C7FA8 /* TimeWidget.swift */; };
+		B51343472710CD01000C7FA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B51343462710CD01000C7FA8 /* Assets.xcassets */; };
+		B513434B2710CD01000C7FA8 /* TimeWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B513433D2710CD00000C7FA8 /* TimeWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B51343502710CDDE000C7FA8 /* UserColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5134330270FF739000C7FA8 /* UserColors.swift */; };
+		B51343512710CDE1000C7FA8 /* Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4EA2270EC3B400504953 /* Week.swift */; };
+		B51343522710CDE3000C7FA8 /* TimelineWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4E9C270E2C9500504953 /* TimelineWeek.swift */; };
+		B51343532710CDE5000C7FA8 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50A6BDD270CDED700E789E1 /* Timeline.swift */; };
+		B51343542710CDE7000C7FA8 /* TimelineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50A6BEB270E123700E789E1 /* TimelineItem.swift */; };
+		B51343552710CEAB000C7FA8 /* TextIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4EB1270F800700504953 /* TextIcon.swift */; };
+		B51343562710CEAD000C7FA8 /* Array-AppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4EA4270ECD4B00504953 /* Array-AppStorage.swift */; };
+		B51343572710CEAF000C7FA8 /* Color-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4EA7270ED14F00504953 /* Color-Extensions.swift */; };
+		B51343582710CEB0000C7FA8 /* Alert-TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4EAF270EDA7F00504953 /* Alert-TextField.swift */; };
+		B51343592710CEB3000C7FA8 /* DetentSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5134337271030AB000C7FA8 /* DetentSheet.swift */; };
 		B5CB4E9B270E1F0900504953 /* TimeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4E9A270E1F0900504953 /* TimeTable.swift */; };
 		B5CB4E9D270E2C9500504953 /* TimelineWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4E9C270E2C9500504953 /* TimelineWeek.swift */; };
 		B5CB4E9F270E2D8300504953 /* TimeTableWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4E9E270E2D8300504953 /* TimeTableWeek.swift */; };
@@ -48,7 +63,28 @@
 			remoteGlobalIDString = B50A6BAD270CDEC700E789E1;
 			remoteInfo = Timetiniery;
 		};
+		B51343492710CD01000C7FA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B50A6BA6270CDEC700E789E1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B513433C2710CD00000C7FA8;
+			remoteInfo = TimeWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B513434F2710CD01000C7FA8 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B513434B2710CD01000C7FA8 /* TimeWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B50A6BAE270CDEC700E789E1 /* Timetinerary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timetinerary.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,16 +93,24 @@
 		B50A6BB5270CDEC800E789E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B50A6BB8270CDEC800E789E1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B50A6BBE270CDEC800E789E1 /* TimetineraryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimetineraryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B50A6BC2270CDEC800E789E1 /* TimetinieryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetinieryTests.swift; sourceTree = "<group>"; };
+		B50A6BC2270CDEC800E789E1 /* TimetineraryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetineraryTests.swift; sourceTree = "<group>"; };
 		B50A6BC8270CDEC800E789E1 /* TimetineraryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimetineraryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B50A6BCC270CDEC800E789E1 /* TimetinieryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetinieryUITests.swift; sourceTree = "<group>"; };
-		B50A6BCE270CDEC800E789E1 /* TimetinieryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetinieryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B50A6BCC270CDEC800E789E1 /* TimetineraryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetineraryUITests.swift; sourceTree = "<group>"; };
+		B50A6BCE270CDEC800E789E1 /* TimetineraryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetineraryUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B50A6BDD270CDED700E789E1 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		B50A6BE1270CDF3000E789E1 /* Timetinerary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Timetinerary.entitlements; sourceTree = "<group>"; };
 		B50A6BEB270E123700E789E1 /* TimelineItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineItem.swift; sourceTree = "<group>"; };
 		B5134330270FF739000C7FA8 /* UserColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserColors.swift; sourceTree = "<group>"; };
 		B51343322710043F000C7FA8 /* AppearanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceView.swift; sourceTree = "<group>"; };
 		B5134337271030AB000C7FA8 /* DetentSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetentSheet.swift; sourceTree = "<group>"; };
+		B513433D2710CD00000C7FA8 /* TimeWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TimeWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B513433F2710CD00000C7FA8 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		B51343412710CD00000C7FA8 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		B51343442710CD00000C7FA8 /* TimeWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeWidget.swift; sourceTree = "<group>"; };
+		B51343462710CD01000C7FA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B51343482710CD01000C7FA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B513435A2710EA75000C7FA8 /* TimeWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TimeWidgetExtension.entitlements; sourceTree = "<group>"; };
+		B513435B2710EAF7000C7FA8 /* TimeWidgetExtensionRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TimeWidgetExtensionRelease.entitlements; sourceTree = "<group>"; };
 		B5CB4E9A270E1F0900504953 /* TimeTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTable.swift; sourceTree = "<group>"; };
 		B5CB4E9C270E2C9500504953 /* TimelineWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineWeek.swift; sourceTree = "<group>"; };
 		B5CB4E9E270E2D8300504953 /* TimeTableWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableWeek.swift; sourceTree = "<group>"; };
@@ -103,15 +147,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B513433A2710CD00000C7FA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B51343422710CD00000C7FA8 /* SwiftUI.framework in Frameworks */,
+				B51343402710CD00000C7FA8 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		B50A6BA5270CDEC700E789E1 = {
 			isa = PBXGroup;
 			children = (
+				B513435B2710EAF7000C7FA8 /* TimeWidgetExtensionRelease.entitlements */,
+				B513435A2710EA75000C7FA8 /* TimeWidgetExtension.entitlements */,
 				B50A6BB0270CDEC700E789E1 /* Timetinerary */,
 				B50A6BC1270CDEC800E789E1 /* TimetineraryTests */,
 				B50A6BCB270CDEC800E789E1 /* TimetineraryUITests */,
+				B51343432710CD00000C7FA8 /* TimeWidget */,
+				B513433E2710CD00000C7FA8 /* Frameworks */,
 				B50A6BAF270CDEC700E789E1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -122,6 +179,7 @@
 				B50A6BAE270CDEC700E789E1 /* Timetinerary.app */,
 				B50A6BBE270CDEC800E789E1 /* TimetineraryTests.xctest */,
 				B50A6BC8270CDEC800E789E1 /* TimetineraryUITests.xctest */,
+				B513433D2710CD00000C7FA8 /* TimeWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -154,7 +212,7 @@
 		B50A6BC1270CDEC800E789E1 /* TimetineraryTests */ = {
 			isa = PBXGroup;
 			children = (
-				B50A6BC2270CDEC800E789E1 /* TimetinieryTests.swift */,
+				B50A6BC2270CDEC800E789E1 /* TimetineraryTests.swift */,
 			);
 			path = TimetineraryTests;
 			sourceTree = "<group>";
@@ -162,8 +220,8 @@
 		B50A6BCB270CDEC800E789E1 /* TimetineraryUITests */ = {
 			isa = PBXGroup;
 			children = (
-				B50A6BCC270CDEC800E789E1 /* TimetinieryUITests.swift */,
-				B50A6BCE270CDEC800E789E1 /* TimetinieryUITestsLaunchTests.swift */,
+				B50A6BCC270CDEC800E789E1 /* TimetineraryUITests.swift */,
+				B50A6BCE270CDEC800E789E1 /* TimetineraryUITestsLaunchTests.swift */,
 			);
 			path = TimetineraryUITests;
 			sourceTree = "<group>";
@@ -178,6 +236,25 @@
 				B50A6BEB270E123700E789E1 /* TimelineItem.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		B513433E2710CD00000C7FA8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B513433F2710CD00000C7FA8 /* WidgetKit.framework */,
+				B51343412710CD00000C7FA8 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B51343432710CD00000C7FA8 /* TimeWidget */ = {
+			isa = PBXGroup;
+			children = (
+				B51343442710CD00000C7FA8 /* TimeWidget.swift */,
+				B51343462710CD01000C7FA8 /* Assets.xcassets */,
+				B51343482710CD01000C7FA8 /* Info.plist */,
+			);
+			path = TimeWidget;
 			sourceTree = "<group>";
 		};
 		B5CB4EA6270ECD5300504953 /* Extensions */ = {
@@ -230,10 +307,12 @@
 				B50A6BAA270CDEC700E789E1 /* Sources */,
 				B50A6BAB270CDEC700E789E1 /* Frameworks */,
 				B50A6BAC270CDEC700E789E1 /* Resources */,
+				B513434F2710CD01000C7FA8 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B513434A2710CD01000C7FA8 /* PBXTargetDependency */,
 			);
 			name = Timetinerary;
 			packageProductDependencies = (
@@ -278,6 +357,23 @@
 			productReference = B50A6BC8270CDEC800E789E1 /* TimetineraryUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		B513433C2710CD00000C7FA8 /* TimeWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B513434C2710CD01000C7FA8 /* Build configuration list for PBXNativeTarget "TimeWidgetExtension" */;
+			buildPhases = (
+				B51343392710CD00000C7FA8 /* Sources */,
+				B513433A2710CD00000C7FA8 /* Frameworks */,
+				B513433B2710CD00000C7FA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TimeWidgetExtension;
+			productName = TimeWidgetExtension;
+			productReference = B513433D2710CD00000C7FA8 /* TimeWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -299,6 +395,9 @@
 						CreatedOnToolsVersion = 13.0;
 						TestTargetID = B50A6BAD270CDEC700E789E1;
 					};
+					B513433C2710CD00000C7FA8 = {
+						CreatedOnToolsVersion = 13.0;
+					};
 				};
 			};
 			buildConfigurationList = B50A6BA9270CDEC700E789E1 /* Build configuration list for PBXProject "Timetinerary" */;
@@ -319,6 +418,7 @@
 				B50A6BAD270CDEC700E789E1 /* Timetinerary */,
 				B50A6BBD270CDEC800E789E1 /* TimetineraryTests */,
 				B50A6BC7270CDEC800E789E1 /* TimetineraryUITests */,
+				B513433C2710CD00000C7FA8 /* TimeWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -344,6 +444,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B513433B2710CD00000C7FA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B51343472710CD01000C7FA8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,7 +488,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B50A6BC3270CDEC800E789E1 /* TimetinieryTests.swift in Sources */,
+				B50A6BC3270CDEC800E789E1 /* TimetineraryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,8 +496,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B50A6BCF270CDEC800E789E1 /* TimetinieryUITestsLaunchTests.swift in Sources */,
-				B50A6BCD270CDEC800E789E1 /* TimetinieryUITests.swift in Sources */,
+				B50A6BCF270CDEC800E789E1 /* TimetineraryUITestsLaunchTests.swift in Sources */,
+				B50A6BCD270CDEC800E789E1 /* TimetineraryUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B51343392710CD00000C7FA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B51343552710CEAB000C7FA8 /* TextIcon.swift in Sources */,
+				B51343522710CDE3000C7FA8 /* TimelineWeek.swift in Sources */,
+				B51343582710CEB0000C7FA8 /* Alert-TextField.swift in Sources */,
+				B51343502710CDDE000C7FA8 /* UserColors.swift in Sources */,
+				B51343592710CEB3000C7FA8 /* DetentSheet.swift in Sources */,
+				B51343562710CEAD000C7FA8 /* Array-AppStorage.swift in Sources */,
+				B51343452710CD00000C7FA8 /* TimeWidget.swift in Sources */,
+				B51343572710CEAF000C7FA8 /* Color-Extensions.swift in Sources */,
+				B51343542710CDE7000C7FA8 /* TimelineItem.swift in Sources */,
+				B51343532710CDE5000C7FA8 /* Timeline.swift in Sources */,
+				B51343512710CDE1000C7FA8 /* Week.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +531,11 @@
 			isa = PBXTargetDependency;
 			target = B50A6BAD270CDEC700E789E1 /* Timetinerary */;
 			targetProxy = B50A6BC9270CDEC800E789E1 /* PBXContainerItemProxy */;
+		};
+		B513434A2710CD01000C7FA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B513433C2710CD00000C7FA8 /* TimeWidgetExtension */;
+			targetProxy = B51343492710CD01000C7FA8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -528,6 +659,7 @@
 		B50A6BD3270CDEC800E789E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Timetinerary/Timetinerary.entitlements;
@@ -560,6 +692,7 @@
 		B50A6BD4270CDEC800E789E1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Timetinerary/Timetinerary.entitlements;
@@ -685,6 +818,62 @@
 			};
 			name = Release;
 		};
+		B513434D2710CD01000C7FA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TimeWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T8PATWK92J;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TimeWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TimeWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.benk.Timetinerary.TimeWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B513434E2710CD01000C7FA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TimeWidgetExtensionRelease.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T8PATWK92J;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TimeWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TimeWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.benk.Timetinerary.TimeWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -720,6 +909,15 @@
 			buildConfigurations = (
 				B50A6BD9270CDEC800E789E1 /* Debug */,
 				B50A6BDA270CDEC800E789E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B513434C2710CD01000C7FA8 /* Build configuration list for PBXNativeTarget "TimeWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B513434D2710CD01000C7FA8 /* Debug */,
+				B513434E2710CD01000C7FA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

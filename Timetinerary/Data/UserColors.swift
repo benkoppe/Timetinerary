@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 enum UserColorTypes: String, Equatable {
     case beforeBG, beforeText, duringBG, duringFG, duringText, afterBG, afterText, dayOffBG, dayOffFG, dayOffText
@@ -80,6 +81,7 @@ class UserColors: ObservableObject, Codable {
             let defaults = UserDefaults.init(suiteName: "group.com.benk.timetinerary")
             defaults?.setValue(self.getData(), forKey: key)
         }
+        WidgetCenter.shared.reloadAllTimelines()
     }
     
     func getData() -> Data {
