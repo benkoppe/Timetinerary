@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SwiftUIMailView",
+        "repositoryURL": "https://github.com/globulus/swiftui-mail-view",
+        "state": {
+          "branch": null,
+          "revision": "dad1d289cb904d477f2fbabcca5ba82bfcfb2ea6",
+          "version": "1.0.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
