@@ -51,6 +51,8 @@
 		B5CB4EB0270EDA7F00504953 /* Alert-TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4EAF270EDA7F00504953 /* Alert-TextField.swift */; };
 		B5CB4EB2270F800700504953 /* TextIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4EB1270F800700504953 /* TextIcon.swift */; };
 		B5CB4EB4270F911700504953 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4EB3270F911700504953 /* TimeView.swift */; };
+		B5E62DB52714C9DF005313E0 /* HasChanged.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E62DB42714C9DF005313E0 /* HasChanged.swift */; };
+		B5E62DB62714CA56005313E0 /* HasChanged.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E62DB42714C9DF005313E0 /* HasChanged.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +135,7 @@
 		B5CB4EAF270EDA7F00504953 /* Alert-TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert-TextField.swift"; sourceTree = "<group>"; };
 		B5CB4EB1270F800700504953 /* TextIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextIcon.swift; sourceTree = "<group>"; };
 		B5CB4EB3270F911700504953 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
+		B5E62DB42714C9DF005313E0 /* HasChanged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasChanged.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				B5134330270FF739000C7FA8 /* UserColors.swift */,
+				B5E62DB42714C9DF005313E0 /* HasChanged.swift */,
 				B5CB4EA2270EC3B400504953 /* Week.swift */,
 				B5CB4E9C270E2C9500504953 /* TimelineWeek.swift */,
 				B50A6BDD270CDED700E789E1 /* Timeline.swift */,
@@ -497,6 +501,7 @@
 				B513435E271144A7000C7FA8 /* ContactView.swift in Sources */,
 				B5CB4EB4270F911700504953 /* TimeView.swift in Sources */,
 				B51343332710043F000C7FA8 /* AppearanceView.swift in Sources */,
+				B5E62DB52714C9DF005313E0 /* HasChanged.swift in Sources */,
 				B5CB4EB2270F800700504953 /* TextIcon.swift in Sources */,
 				B50A6BB4270CDEC700E789E1 /* ContentView.swift in Sources */,
 				B5CB4E9F270E2D8300504953 /* TimeTableWeek.swift in Sources */,
@@ -544,6 +549,7 @@
 				B51343452710CD00000C7FA8 /* TimeWidget.swift in Sources */,
 				B51343572710CEAF000C7FA8 /* Color-Extensions.swift in Sources */,
 				B51343542710CDE7000C7FA8 /* TimelineItem.swift in Sources */,
+				B5E62DB62714CA56005313E0 /* HasChanged.swift in Sources */,
 				B51343532710CDE5000C7FA8 /* Timeline.swift in Sources */,
 				B51343512710CDE1000C7FA8 /* Week.swift in Sources */,
 			);
@@ -694,14 +700,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Timetinerary/Timetinerary.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Timetinerary/Preview Content\"";
 				DEVELOPMENT_TEAM = T8PATWK92J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Timetinerary/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Timetinerary;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -729,14 +734,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Timetinerary/Timetinerary.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Timetinerary/Preview Content\"";
 				DEVELOPMENT_TEAM = T8PATWK92J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Timetinerary/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Timetinerary;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -859,7 +863,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = TimeWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = T8PATWK92J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TimeWidget/Info.plist;
@@ -887,7 +891,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = TimeWidgetExtensionRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = T8PATWK92J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TimeWidget/Info.plist;

@@ -6,13 +6,29 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct ContentView: View {
-    @ObservedObject var userColors: UserColors = UserColors()
+    @Environment(\.scenePhase) var scenePhase
+    
+    @StateObject var userColors: UserColors = UserColors()
+    @StateObject var timelineWeek: TimelineWeek = TimelineWeek()
+    
+    @State private var changesMade = false
     
     var body: some View {
         TimeTableWeek()
             .environmentObject(userColors)
+            .environmentObject(timelineWeek)
+            .onReceive(NotificationCenter.default.publisher(for: Notification.Name("hasChanged"))) { _ in
+                changesMade = true
+            }
+            .onChange(of: scenePhase) { phase in
+                if phase == .background && changesMade {
+                    WidgetCenter.shared.reloadAllTimelines()
+                    changesMade = false
+                }
+            }
     }
 }
 

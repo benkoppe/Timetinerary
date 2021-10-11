@@ -37,7 +37,7 @@ class TimelineWeek: ObservableObject, Identifiable {
         for timeline in week {
             timeline.save()
         }
-        WidgetCenter.shared.reloadAllTimelines()
+        hasChanged()
     }
     
     func getTimeline(day: WeekDays) -> Timeline {

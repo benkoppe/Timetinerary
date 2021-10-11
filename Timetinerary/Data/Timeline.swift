@@ -113,7 +113,7 @@ class Timeline: ObservableObject, Identifiable {
         if key != "" {
             let defaults = UserDefaults.init(suiteName: "group.com.benk.timetinerary")
             defaults?.setValue(TimelineItem.getData(array: timelineItems), forKey: key)
-            WidgetCenter.shared.reloadAllTimelines()
+            hasChanged()
         }
     }
 }

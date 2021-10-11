@@ -10,7 +10,7 @@ import WidgetKit
 
 struct TimeTableWeek: View {
     @State private var weekDay: WeekDays = .M
-    @ObservedObject var timelineWeek: TimelineWeek = TimelineWeek()
+    @EnvironmentObject var timelineWeek: TimelineWeek
     
     @AppStorage("defaultSaved", store: UserDefaults(suiteName: "group.com.benk.timetinerary")) var savedKeys: [String] = []
     
@@ -51,7 +51,7 @@ struct TimeTableWeek: View {
             }
             .onOpenURL { url in
                 if let scheme = url.scheme, scheme == "widget" {
-                    WidgetCenter.shared.reloadAllTimelines()
+                    hasChanged()
                     showingTime = true
                 }
             }
@@ -180,6 +180,6 @@ struct TimeTableWeek: View {
 
 struct TimeTableWeek_Previews: PreviewProvider {
     static var previews: some View {
-        TimeTableWeek(timelineWeek: TimelineWeek())
+        TimeTableWeek()
     }
 }

@@ -81,7 +81,7 @@ class UserColors: ObservableObject, Codable {
             let defaults = UserDefaults.init(suiteName: "group.com.benk.timetinerary")
             defaults?.setValue(self.getData(), forKey: key)
         }
-        WidgetCenter.shared.reloadAllTimelines()
+        hasChanged()
     }
     
     func getData() -> Data {
