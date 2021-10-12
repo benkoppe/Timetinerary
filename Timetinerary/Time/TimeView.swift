@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import WidgetKit
 
 struct TimeView: View {
     @Environment(\.dismiss) var dismiss
@@ -47,6 +48,9 @@ struct TimeView: View {
             .navigationBarTitleDisplayMode(.inline)
             .onReceive(timer) { _ in
                 self.date = Date()
+            }
+            .onAppear {
+                WidgetCenter.shared.reloadAllTimelines()
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
