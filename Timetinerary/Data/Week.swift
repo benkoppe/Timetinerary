@@ -31,6 +31,10 @@ enum WeekDays: String, CaseIterable, Equatable {
         }
     }
     
+    var weekDay: Int {
+        ((self.int + 1) % 7) + 1
+    }
+    
     static func convertComponent(weekDay: Int) -> WeekDays {
         switch weekDay {
         case 1:

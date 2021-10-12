@@ -53,6 +53,8 @@
 		B5CB4EB4270F911700504953 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4EB3270F911700504953 /* TimeView.swift */; };
 		B5E62DB52714C9DF005313E0 /* HasChanged.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E62DB42714C9DF005313E0 /* HasChanged.swift */; };
 		B5E62DB62714CA56005313E0 /* HasChanged.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E62DB42714C9DF005313E0 /* HasChanged.swift */; };
+		B5E62DB827155D2F005313E0 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E62DB727155D2F005313E0 /* Notifications.swift */; };
+		B5E62DBC27156738005313E0 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E62DBB27156738005313E0 /* NotificationsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +138,8 @@
 		B5CB4EB1270F800700504953 /* TextIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextIcon.swift; sourceTree = "<group>"; };
 		B5CB4EB3270F911700504953 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
 		B5E62DB42714C9DF005313E0 /* HasChanged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasChanged.swift; sourceTree = "<group>"; };
+		B5E62DB727155D2F005313E0 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		B5E62DBB27156738005313E0 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +249,7 @@
 		B50A6BEA270E0C7200E789E1 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				B5E62DB727155D2F005313E0 /* Notifications.swift */,
 				B5134330270FF739000C7FA8 /* UserColors.swift */,
 				B5E62DB42714C9DF005313E0 /* HasChanged.swift */,
 				B5CB4EA2270EC3B400504953 /* Week.swift */,
@@ -301,6 +306,7 @@
 				B5CB4EA0270EC28900504953 /* SettingsView.swift */,
 				B51343322710043F000C7FA8 /* AppearanceView.swift */,
 				B5CB4EAB270ED20200504953 /* SavedTablesView.swift */,
+				B5E62DBB27156738005313E0 /* NotificationsView.swift */,
 				B513436727114CC3000C7FA8 /* AboutView.swift */,
 				B513435D271144A7000C7FA8 /* ContactView.swift */,
 				B513436527114C71000C7FA8 /* LicensesView.swift */,
@@ -507,6 +513,7 @@
 				B5CB4E9F270E2D8300504953 /* TimeTableWeek.swift in Sources */,
 				B5134331270FF739000C7FA8 /* UserColors.swift in Sources */,
 				B5CB4EB0270EDA7F00504953 /* Alert-TextField.swift in Sources */,
+				B5E62DB827155D2F005313E0 /* Notifications.swift in Sources */,
 				B5CB4E9B270E1F0900504953 /* TimeTable.swift in Sources */,
 				B513436B27121BAF000C7FA8 /* BoardingView.swift in Sources */,
 				B5134338271030AB000C7FA8 /* DetentSheet.swift in Sources */,
@@ -514,6 +521,7 @@
 				B5CB4EA3270EC3B400504953 /* Week.swift in Sources */,
 				B50A6BEC270E123700E789E1 /* TimelineItem.swift in Sources */,
 				B5CB4EAC270ED20200504953 /* SavedTablesView.swift in Sources */,
+				B5E62DBC27156738005313E0 /* NotificationsView.swift in Sources */,
 				B50A6BE0270CDED700E789E1 /* Timeline.swift in Sources */,
 				B50A6BB2270CDEC700E789E1 /* TimetineraryApp.swift in Sources */,
 			);

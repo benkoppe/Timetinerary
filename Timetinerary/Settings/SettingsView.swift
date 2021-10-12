@@ -27,6 +27,12 @@ struct SettingsView: View {
                 }
                 
                 Section {
+                    SettingsItem(name: "Notifications", systemImage: "app.badge", background: .pink) {
+                        NotificationsView()
+                    }
+                }
+                
+                Section {
                     SettingsItem(name: "About", systemImage: "info.circle", background: .indigo) {
                         AboutView()
                     }
@@ -58,7 +64,7 @@ struct SettingsView: View {
         
         let destination: Content
         
-        init(name: String, systemImage: String, foreground: Color = .primary, background: Color, @ViewBuilder content: () -> Content) {
+        init(name: String, systemImage: String, foreground: Color = .white, background: Color, @ViewBuilder content: () -> Content) {
             self.name = name
             self.image = Image(systemName: systemImage)
             self.foreground = foreground

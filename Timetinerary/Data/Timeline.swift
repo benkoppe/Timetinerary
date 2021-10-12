@@ -57,14 +57,14 @@ class Timeline: ObservableObject, Identifiable {
         let firstItem = timelineItems.first!
         let lastItem = timelineItems.last!
         
-        if time < firstItem.getDate() { return .before(firstItem: firstItem) }
-        if time > lastItem.getDate() { return .after(lastItem: lastItem) }
+        if time < firstItem.getDate(for: time) { return .before(firstItem: firstItem) }
+        if time > lastItem.getDate(for: time) { return .after(lastItem: lastItem) }
         
         var returnItem: TimelineItem = firstItem
         var nextItem: TimelineItem = firstItem
         
         for item in timelineItems {
-            if time > item.getDate() {
+            if time > item.getDate(for: time) {
                 returnItem = item
             } else {
                 nextItem = item

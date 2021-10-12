@@ -23,11 +23,15 @@ struct ContentView: View {
             .onReceive(NotificationCenter.default.publisher(for: Notification.Name("hasChanged"))) { _ in
                 changesMade = true
             }
+            .onAppear {
+                WidgetCenter.shared.reloadAllTimelines()
+            }
             .onChange(of: scenePhase) { phase in
                 if phase == .background && changesMade {
                     WidgetCenter.shared.reloadAllTimelines()
                     changesMade = false
                 }
+                Notifications.schedule(for: timelineWeek)
             }
     }
 }

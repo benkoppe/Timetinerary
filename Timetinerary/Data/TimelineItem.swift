@@ -73,6 +73,11 @@ class TimelineItem: ObservableObject, Codable, Equatable, Identifiable, NSCopyin
         return calendar.date(bySettingHour: self.hour, minute: self.minute, second: 0, of: Date()) ?? Date()
     }
     
+    func getDate(for date: Date) -> Date {
+        let calendar = Calendar.current
+        return calendar.date(bySettingHour: self.hour, minute: self.minute, second: 0, of: date) ?? Date()
+    }
+    
     func getTimeString() -> String {
         let date = self.getDate()
         

@@ -25,44 +25,48 @@ struct Provider: TimelineProvider {
         let policy: TimelineReloadPolicy = .atEnd
         
         let calendar = Calendar.current
-        let date = Date()
+        var date = Date()
         let timelineWeek = TimelineWeek()
         let userColors = UserColors()
-        let moment = timelineWeek.getTimeline(date: date).getMoment(at: date)
         
-        var refreshDate: Date? = nil
-        
-        entries.append(Entry(date: Date(), timelineWeek: timelineWeek, userColors: userColors))
-        
-        switch moment {
-        case .conflicts:
-            return
-        case .before(let firstItem):
-            refreshDate = firstItem.getDate()
-        case .after:
-            let unshiftedDate = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: date)!
-            refreshDate = calendar.date(byAdding: .day, value: 1, to: unshiftedDate)
-        case .during(_, let nextItem):
-            refreshDate = nextItem.getDate()
-        case .empty:
-            if let daysUntil = timelineWeek.daysTill(date: date, direction: .forward), daysUntil > 0 {
-                let unshiftedDate = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: date)!
-                refreshDate = calendar.date(byAdding: .day, value: daysUntil, to: unshiftedDate)
-            } else {
+        for _ in 1...20 {
+            let moment = timelineWeek.getTimeline(date: date).getMoment(at: date)
+            var refreshDate: Date? = nil
+            
+            entries.append(Entry(date: date, timelineWeek: timelineWeek, userColors: userColors))
+            
+            switch moment {
+            case .conflicts:
+                return
+            case .before(let firstItem):
+                refreshDate = firstItem.getDate(for: date)
+            case .after:
                 let unshiftedDate = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: date)!
                 refreshDate = calendar.date(byAdding: .day, value: 1, to: unshiftedDate)
+            case .during(_, let nextItem):
+                refreshDate = nextItem.getDate(for: date)
+            case .empty:
+                if let daysUntil = timelineWeek.daysTill(date: date, direction: .forward), daysUntil > 0 {
+                    let unshiftedDate = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: date)!
+                    refreshDate = calendar.date(byAdding: .day, value: daysUntil, to: unshiftedDate)
+                } else {
+                    let unshiftedDate = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: date)!
+                    refreshDate = calendar.date(byAdding: .day, value: 1, to: unshiftedDate)
+                }
             }
-        }
-        
-        if let refreshDate = refreshDate {
-            let difference = Int(refreshDate.timeIntervalSince(date)) + 10
-            let iterations = 5
-            let interval = difference / iterations
             
-            for addAmount in stride(from: interval, to: difference, by: interval) {
-                let entryDate = calendar.date(byAdding: .second, value: addAmount, to: date)!
-                entries.append(Entry(date: entryDate, timelineWeek: timelineWeek, userColors: userColors))
+            if let refreshDate = refreshDate {
+                let difference = Int(refreshDate.timeIntervalSince(date)) + 10
+                let iterations = 5
+                let interval = difference / iterations
+                
+                for addAmount in stride(from: interval, to: difference, by: interval) {
+                    let entryDate = calendar.date(byAdding: .second, value: addAmount, to: date)!
+                    entries.append(Entry(date: entryDate, timelineWeek: timelineWeek, userColors: userColors))
+                }
             }
+            
+            date = calendar.date(byAdding: .second, value: 10, to: refreshDate ?? Date())!
         }
         
         let timeline = WidgetTimeline(entries: entries, policy: policy)
@@ -111,8 +115,8 @@ struct TimeWidgetEntryView : View {
         let date: Date
         
         var percentageElapsed: Double {
-            let total = nextItem.getDate().timeIntervalSince(item.getDate())
-            let elapsed = date.timeIntervalSince(item.getDate())
+            let total = nextItem.getDate(for: date).timeIntervalSince(item.getDate(for: date))
+            let elapsed = date.timeIntervalSince(item.getDate(for: date))
             return elapsed / total
         }
         
@@ -141,7 +145,7 @@ struct TimeWidgetEntryView : View {
                     Group {
                         Text("Ends in ")
                         +
-                        Text(nextItem.getDate(), style: .relative)
+                        Text(nextItem.getDate(for: date), style: .relative)
                     }
                     .widgetText(.subheader)
                     .lineLimit(2)
@@ -177,7 +181,7 @@ struct TimeWidgetEntryView : View {
                             .italic()
                         +
                         
-                        Text(firstItem.getDate(), style: .relative)
+                        Text(firstItem.getDate(for: date), style: .relative)
                             .italic()
                     }
                     .widgetText(.subheader)
