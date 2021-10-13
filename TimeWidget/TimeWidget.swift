@@ -29,7 +29,7 @@ struct Provider: TimelineProvider {
         let timelineWeek = TimelineWeek()
         let userColors = UserColors()
         
-        for _ in 1...20 {
+        for _ in 1...1 {
             let moment = timelineWeek.getTimeline(date: date).getMoment(at: date)
             var refreshDate: Date? = nil
             
@@ -66,7 +66,14 @@ struct Provider: TimelineProvider {
                 }
             }
             
-            date = calendar.date(byAdding: .second, value: 10, to: refreshDate ?? Date())!
+            date = calendar.date(byAdding: .second, value: 1, to: refreshDate ?? Date())!
+        }
+        
+        for entry in entries {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .short
+            formatter.timeStyle = .short
+            print(formatter.string(from: entry.date))
         }
         
         let timeline = WidgetTimeline(entries: entries, policy: policy)
@@ -149,6 +156,7 @@ struct TimeWidgetEntryView : View {
                     }
                     .widgetText(.subheader)
                     .lineLimit(2)
+                    .fixedSize(horizontal: false, vertical: true)
                     .minimumScaleFactor(0.8)
                 }
                 .padding(15)

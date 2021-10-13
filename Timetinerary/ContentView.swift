@@ -31,7 +31,7 @@ struct ContentView: View {
                     WidgetCenter.shared.reloadAllTimelines()
                     changesMade = false
                 }
-                Notifications.schedule(for: timelineWeek)
+                Notifications().schedule(for: timelineWeek)
             }
     }
 }

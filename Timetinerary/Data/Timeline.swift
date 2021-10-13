@@ -43,8 +43,6 @@ class Timeline: ObservableObject, Identifiable {
         
         self.key = key
         self.timelineItems = arr
-        
-        save()
     }
     
     init(items: [TimelineItem]) {

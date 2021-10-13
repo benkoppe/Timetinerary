@@ -7,8 +7,17 @@
 
 import Foundation
 import UserNotifications
+import SwiftUI
 
 struct Notifications {
+    @AppStorage("notifications", store: UserDefaults(suiteName: "group.com.benk.timetinerary")) var enabled: Bool = false
+    
+    @AppStorage("starts", store: UserDefaults(suiteName: "group.com.benk.timetinerary")) var starts: Bool = false
+    @AppStorage("ends", store: UserDefaults(suiteName: "group.com.benk.timetinerary")) var ends: Bool = false
+    
+    @AppStorage("startOffset", store: UserDefaults(suiteName: "group.com.benk.timetinerary")) var startOffset: Int = 1
+    @AppStorage("endOffset", store: UserDefaults(suiteName: "group.com.benk.timetinerary")) var endOffset: Int = 10
+    
     static func getPermissions() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
             if success {
@@ -19,17 +28,10 @@ struct Notifications {
         }
     }
     
-    static func schedule(for week: TimelineWeek) {
+    func schedule(for week: TimelineWeek) {
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         
-        let defaults = UserDefaults.init(suiteName: "group.com.benk.timetinerary")
-        
-        let enabled = defaults?.bool(forKey: "notifications") ?? false
-        
         if enabled {
-            let starts = defaults?.bool(forKey: "starts") ?? false
-            let ends = defaults?.bool(forKey: "ends") ?? false
-            
             if starts { scheduleStarts(for: week) }
             if ends { scheduleEnds(for: week) }
         }
@@ -37,16 +39,15 @@ struct Notifications {
         print("Scheduled notifications!")
     }
     
-    private static func scheduleStarts(for week: TimelineWeek) {
+    private func scheduleStarts(for week: TimelineWeek) {
         for day in WeekDays.allCases {
             let timeline = week.getTimeline(day: day)
             scheduleStarts(for: timeline, onDay: day)
         }
     }
     
-    private static func scheduleStarts(for timeline: Timeline, onDay: WeekDays) {
-        let defaults = UserDefaults.init(suiteName: "group.com.benk.timetinerary")
-        let offset = defaults?.integer(forKey: "startOffset") ?? 1
+    private func scheduleStarts(for timeline: Timeline, onDay: WeekDays) {
+        let offset = startOffset
         let zeroOffset = offset == 0
         
         for (index, item) in timeline.timelineItems.enumerated() {
@@ -68,16 +69,15 @@ struct Notifications {
         }
     }
     
-    private static func scheduleEnds(for week: TimelineWeek) {
+    private func scheduleEnds(for week: TimelineWeek) {
         for day in WeekDays.allCases {
             let timeline = week.getTimeline(day: day)
             scheduleEnds(for: timeline, onDay: day)
         }
     }
     
-    private static func scheduleEnds(for timeline: Timeline, onDay: WeekDays) {
-        let defaults = UserDefaults.init(suiteName: "group.com.benk.timetinerary")
-        let offset = defaults?.integer(forKey: "endOffset") ?? 10
+    private func scheduleEnds(for timeline: Timeline, onDay: WeekDays) {
+        let offset = endOffset
         let zeroOffset = offset == 0
         
         var lastItem: TimelineItem?
