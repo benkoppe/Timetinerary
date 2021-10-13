@@ -19,6 +19,10 @@ struct SettingsView: View {
                         AppearanceView()
                     }
                     
+                    SettingsItem(name: "App Icon", systemImage: "clock", background: Color("Icon")) {
+                        AppIconsView()
+                    }
+                    
                     SettingsItem(name: "Saved Tables", systemImage: "square.and.arrow.down", background: .blue) {
                         SavedTablesView()
                     }

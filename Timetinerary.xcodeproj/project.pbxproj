@@ -40,6 +40,8 @@
 		B513436627114C71000C7FA8 /* LicensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B513436527114C71000C7FA8 /* LicensesView.swift */; };
 		B513436827114CC3000C7FA8 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B513436727114CC3000C7FA8 /* AboutView.swift */; };
 		B513436B27121BAF000C7FA8 /* BoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B513436A27121BAF000C7FA8 /* BoardingView.swift */; };
+		B58F61392716584F00F91E69 /* AppIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58F61382716584F00F91E69 /* AppIcons.swift */; };
+		B58F613B2716589100F91E69 /* AppIconsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58F613A2716589100F91E69 /* AppIconsView.swift */; };
 		B5CB4E9B270E1F0900504953 /* TimeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4E9A270E1F0900504953 /* TimeTable.swift */; };
 		B5CB4E9D270E2C9500504953 /* TimelineWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4E9C270E2C9500504953 /* TimelineWeek.swift */; };
 		B5CB4E9F270E2D8300504953 /* TimeTableWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4E9E270E2D8300504953 /* TimeTableWeek.swift */; };
@@ -126,6 +128,8 @@
 		B513436527114C71000C7FA8 /* LicensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensesView.swift; sourceTree = "<group>"; };
 		B513436727114CC3000C7FA8 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		B513436A27121BAF000C7FA8 /* BoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingView.swift; sourceTree = "<group>"; };
+		B58F61382716584F00F91E69 /* AppIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcons.swift; sourceTree = "<group>"; };
+		B58F613A2716589100F91E69 /* AppIconsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconsView.swift; sourceTree = "<group>"; };
 		B5CB4E9A270E1F0900504953 /* TimeTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTable.swift; sourceTree = "<group>"; };
 		B5CB4E9C270E2C9500504953 /* TimelineWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineWeek.swift; sourceTree = "<group>"; };
 		B5CB4E9E270E2D8300504953 /* TimeTableWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableWeek.swift; sourceTree = "<group>"; };
@@ -207,6 +211,7 @@
 			children = (
 				B513435F27114540000C7FA8 /* Info.plist */,
 				B50A6BE1270CDF3000E789E1 /* Timetinerary.entitlements */,
+				B58F61382716584F00F91E69 /* AppIcons.swift */,
 				B50A6BB1270CDEC700E789E1 /* TimetineraryApp.swift */,
 				B50A6BB3270CDEC700E789E1 /* ContentView.swift */,
 				B513436927121B8C000C7FA8 /* Boarding */,
@@ -306,6 +311,7 @@
 				B5CB4EA0270EC28900504953 /* SettingsView.swift */,
 				B51343322710043F000C7FA8 /* AppearanceView.swift */,
 				B5CB4EAB270ED20200504953 /* SavedTablesView.swift */,
+				B58F613A2716589100F91E69 /* AppIconsView.swift */,
 				B5E62DBB27156738005313E0 /* NotificationsView.swift */,
 				B513436727114CC3000C7FA8 /* AboutView.swift */,
 				B513435D271144A7000C7FA8 /* ContactView.swift */,
@@ -502,6 +508,7 @@
 				B5CB4E9D270E2C9500504953 /* TimelineWeek.swift in Sources */,
 				B513436827114CC3000C7FA8 /* AboutView.swift in Sources */,
 				B51343642711496C000C7FA8 /* Bundle-Extensions.swift in Sources */,
+				B58F61392716584F00F91E69 /* AppIcons.swift in Sources */,
 				B5CB4EA5270ECD4B00504953 /* Array-AppStorage.swift in Sources */,
 				B5CB4EA1270EC28900504953 /* SettingsView.swift in Sources */,
 				B513435E271144A7000C7FA8 /* ContactView.swift in Sources */,
@@ -510,6 +517,7 @@
 				B5E62DB52714C9DF005313E0 /* HasChanged.swift in Sources */,
 				B5CB4EB2270F800700504953 /* TextIcon.swift in Sources */,
 				B50A6BB4270CDEC700E789E1 /* ContentView.swift in Sources */,
+				B58F613B2716589100F91E69 /* AppIconsView.swift in Sources */,
 				B5CB4E9F270E2D8300504953 /* TimeTableWeek.swift in Sources */,
 				B5134331270FF739000C7FA8 /* UserColors.swift in Sources */,
 				B5CB4EB0270EDA7F00504953 /* Alert-TextField.swift in Sources */,
@@ -706,6 +714,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Timetinerary/Timetinerary.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
@@ -740,6 +749,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Timetinerary/Timetinerary.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
