@@ -74,6 +74,8 @@ class UserColors: ObservableObject, Codable {
         self.dayOffText = colorData?.dayOffText ?? Color("DayOffText")
         
         self.key = key
+        
+        save()
     }
     
     func save() {

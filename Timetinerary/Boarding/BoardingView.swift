@@ -16,8 +16,12 @@ struct BoardingView: View {
             TabView(selection: $tab) {
                 WelcomeView(tab: $tab)
                     .tag(0)
-                WidgetView()
+                WidgetView(tab: $tab)
                     .tag(1)
+                NotificationsView(tab: $tab)
+                    .tag(2)
+                AppearanceView()
+                    .tag(3)
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
             .onChange(of: tab) { value in
@@ -65,7 +69,7 @@ struct BoardingView: View {
                 } label: {
                     HStack {
                         Spacer()
-                        Text("Next")
+                        Text("See More")
                             .font(.headline)
                         Spacer()
                     }
@@ -80,14 +84,14 @@ struct BoardingView: View {
     }
     
     struct WidgetView: View {
-        @Environment(\.dismiss) var dismiss
+        @Binding var tab: Int
         
         var body: some View {
             VStack {
                 Spacer()
                 
                 VStack {
-                    Text("Widget Included")
+                    Text("Widget")
                         .font(.system(size: 40))
                     Image("Widget")
                         .resizable()
@@ -95,8 +99,98 @@ struct BoardingView: View {
                         .frame(width: 200)
                         .cornerRadius(20)
                         .shadow(radius: 30)
-                        .padding(10)
-                    Text("Add your timeline to the homescreen as a widget.")
+                        .padding(.bottom, 10)
+                    Text("Add your timeline to the homescreen as a widget!")
+                        .foregroundColor(.secondary)
+                        .italic()
+                        .multilineTextAlignment(.center)
+                        .padding()
+                }
+                .padding(.vertical)
+                
+                Spacer()
+                Button {
+                    withAnimation { tab = 2 }
+                } label: {
+                    HStack {
+                        Spacer()
+                        Text("Next")
+                            .font(.headline)
+                        Spacer()
+                    }
+                    .padding(.vertical, 5)
+                }
+                .buttonStyle(.borderedProminent)
+                .buttonBorderShape(.capsule)
+                .padding(20)
+                .padding(.horizontal)
+            }
+        }
+    }
+    
+    struct NotificationsView: View {
+        @Binding var tab: Int
+        
+        var body: some View {
+            VStack {
+                Spacer()
+                
+                VStack {
+                    Text("Notifications")
+                        .font(.system(size: 40))
+                    Image("Notifications")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 300)
+                        .cornerRadius(10)
+                        .shadow(radius: 30)
+                        .padding(.bottom, 10)
+                    Text("Set up notifications in the settings screen!")
+                        .foregroundColor(.secondary)
+                        .italic()
+                        .multilineTextAlignment(.center)
+                        .padding()
+                }
+                .padding(.vertical)
+                
+                Spacer()
+                Button {
+                    withAnimation { tab = 3 }
+                } label: {
+                    HStack {
+                        Spacer()
+                        Text("Next")
+                            .font(.headline)
+                        Spacer()
+                    }
+                    .padding(.vertical, 5)
+                }
+                .buttonStyle(.borderedProminent)
+                .buttonBorderShape(.capsule)
+                .padding(20)
+                .padding(.horizontal)
+            }
+        }
+    }
+    
+    struct AppearanceView: View {
+        @Environment(\.dismiss) var dismiss
+        
+        var body: some View {
+            VStack {
+                Spacer()
+                
+                VStack {
+                    Text("Customizable")
+                        .font(.system(size: 40))
+                    Image("Appearance")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 300)
+                        .cornerRadius(20)
+                        .shadow(radius: 30)
+                        .padding(.bottom, 10)
+                    Text("Fully customizable - select the colors you want!")
                         .foregroundColor(.secondary)
                         .italic()
                         .multilineTextAlignment(.center)
