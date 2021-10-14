@@ -45,6 +45,14 @@ class Timeline: ObservableObject, Identifiable {
         self.timelineItems = arr
     }
     
+    init(data: Data, key: String) {
+        var arr: [TimelineItem] = []
+        arr = TimelineItem.getTimelineItems(from: data) ?? []
+        
+        self.key = key
+        self.timelineItems = arr
+    }
+    
     init(items: [TimelineItem]) {
         self.key = ""
         self.timelineItems = items
@@ -107,6 +115,10 @@ class Timeline: ObservableObject, Identifiable {
         for item in timeline.timelineItems {
             timelineItems.append(item.copy() as! TimelineItem)
         }
+    }
+    
+    func getDataSingular() -> Data {
+        TimelineItem.getDataSingular(array: self.timelineItems)
     }
     
     func save() {

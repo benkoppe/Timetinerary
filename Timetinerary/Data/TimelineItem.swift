@@ -108,11 +108,31 @@ class TimelineItem: ObservableObject, Codable, Equatable, Identifiable, NSCopyin
         }
     }
     
+    static func getTimelineItems(from data: Data) -> [TimelineItem]? {
+        do {
+            let decoder = JSONDecoder()
+            return try decoder.decode([TimelineItem].self, from: data)
+        } catch {
+            print("Could not decode \(data)")
+            return nil
+        }
+    }
+    
     static func getData(array: [TimelineItem]) -> [Data] {
         var arr: [Data] = []
         for timelineItem in array {
             arr.append(timelineItem.getData())
         }
         return arr
+    }
+    
+    static func getDataSingular(array: [TimelineItem]) -> Data {
+        do {
+            let encoder = JSONEncoder()
+            return try encoder.encode(array)
+        } catch {
+            print("Could not encode \(self)")
+            return Data()
+        }
     }
 }

@@ -42,6 +42,8 @@
 		B513436B27121BAF000C7FA8 /* BoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B513436A27121BAF000C7FA8 /* BoardingView.swift */; };
 		B58F61392716584F00F91E69 /* AppIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58F61382716584F00F91E69 /* AppIcons.swift */; };
 		B58F613B2716589100F91E69 /* AppIconsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58F613A2716589100F91E69 /* AppIconsView.swift */; };
+		B58F613D2717A69300F91E69 /* Device-Shakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58F613C2717A69300F91E69 /* Device-Shakes.swift */; };
+		B58F613F2717A76600F91E69 /* TableTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58F613E2717A76600F91E69 /* TableTemplates.swift */; };
 		B5CB4E9B270E1F0900504953 /* TimeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4E9A270E1F0900504953 /* TimeTable.swift */; };
 		B5CB4E9D270E2C9500504953 /* TimelineWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4E9C270E2C9500504953 /* TimelineWeek.swift */; };
 		B5CB4E9F270E2D8300504953 /* TimeTableWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4E9E270E2D8300504953 /* TimeTableWeek.swift */; };
@@ -130,6 +132,8 @@
 		B513436A27121BAF000C7FA8 /* BoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingView.swift; sourceTree = "<group>"; };
 		B58F61382716584F00F91E69 /* AppIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcons.swift; sourceTree = "<group>"; };
 		B58F613A2716589100F91E69 /* AppIconsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconsView.swift; sourceTree = "<group>"; };
+		B58F613C2717A69300F91E69 /* Device-Shakes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Device-Shakes.swift"; sourceTree = "<group>"; };
+		B58F613E2717A76600F91E69 /* TableTemplates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableTemplates.swift; sourceTree = "<group>"; };
 		B5CB4E9A270E1F0900504953 /* TimeTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTable.swift; sourceTree = "<group>"; };
 		B5CB4E9C270E2C9500504953 /* TimelineWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineWeek.swift; sourceTree = "<group>"; };
 		B5CB4E9E270E2D8300504953 /* TimeTableWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableWeek.swift; sourceTree = "<group>"; };
@@ -212,6 +216,7 @@
 				B513435F27114540000C7FA8 /* Info.plist */,
 				B50A6BE1270CDF3000E789E1 /* Timetinerary.entitlements */,
 				B58F61382716584F00F91E69 /* AppIcons.swift */,
+				B58F613E2717A76600F91E69 /* TableTemplates.swift */,
 				B50A6BB1270CDEC700E789E1 /* TimetineraryApp.swift */,
 				B50A6BB3270CDEC700E789E1 /* ContentView.swift */,
 				B513436927121B8C000C7FA8 /* Boarding */,
@@ -297,6 +302,7 @@
 			children = (
 				B5CB4EB1270F800700504953 /* TextIcon.swift */,
 				B5CB4EA4270ECD4B00504953 /* Array-AppStorage.swift */,
+				B58F613C2717A69300F91E69 /* Device-Shakes.swift */,
 				B5CB4EA7270ED14F00504953 /* Color-Extensions.swift */,
 				B5CB4EAF270EDA7F00504953 /* Alert-TextField.swift */,
 				B5134337271030AB000C7FA8 /* DetentSheet.swift */,
@@ -508,6 +514,7 @@
 				B5CB4E9D270E2C9500504953 /* TimelineWeek.swift in Sources */,
 				B513436827114CC3000C7FA8 /* AboutView.swift in Sources */,
 				B51343642711496C000C7FA8 /* Bundle-Extensions.swift in Sources */,
+				B58F613F2717A76600F91E69 /* TableTemplates.swift in Sources */,
 				B58F61392716584F00F91E69 /* AppIcons.swift in Sources */,
 				B5CB4EA5270ECD4B00504953 /* Array-AppStorage.swift in Sources */,
 				B5CB4EA1270EC28900504953 /* SettingsView.swift in Sources */,
@@ -530,6 +537,7 @@
 				B50A6BEC270E123700E789E1 /* TimelineItem.swift in Sources */,
 				B5CB4EAC270ED20200504953 /* SavedTablesView.swift in Sources */,
 				B5E62DBC27156738005313E0 /* NotificationsView.swift in Sources */,
+				B58F613D2717A69300F91E69 /* Device-Shakes.swift in Sources */,
 				B50A6BE0270CDED700E789E1 /* Timeline.swift in Sources */,
 				B50A6BB2270CDEC700E789E1 /* TimetineraryApp.swift in Sources */,
 			);
