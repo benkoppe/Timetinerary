@@ -17,7 +17,7 @@ struct AboutView: View {
                 .fontWeight(.bold)
                 .minimumScaleFactor(0.5)
             
-            Image("AppIconIcon")
+            Image("AppIconIconHD")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 200, height: 200)
