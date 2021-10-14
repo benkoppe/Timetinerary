@@ -17,6 +17,11 @@ struct TimetineraryApp: App {
                 .sheet(isPresented: $showLanding) {
                     BoardingView()
                 }
+                .onOpenURL { url in
+                    if url.isFileURL {
+                        Template.importURL(from: url)
+                    }
+                }
         }
     }
 }

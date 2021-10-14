@@ -7,19 +7,54 @@
 
 import Foundation
 
-let templates: [Template] = [atech]
+let presetTemplates: [PresetTemplate] = [atech]
 
-struct Template: Hashable {
+struct Template: Codable {
+    static func exportToURL(tables: [TableTemplate]) -> URL? {
+        guard let encoded = try? JSONEncoder().encode(tables) else { return nil }
+        
+        let name = UUID().uuidString
+        let fileExtension = "timetinerary"
+
+        let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+
+        guard let path = documents?.appendingPathComponent(name).appendingPathExtension(fileExtension) else { return nil }
+
+        do {
+            try encoded.write(to: path, options: .atomic)
+            return path
+        } catch {
+            print(error.localizedDescription)
+            return nil
+        }
+    }
+    
+    static func importURL(from url: URL) {
+        guard let data = try? Data(contentsOf: url), let templates = try? JSONDecoder().decode([TableTemplate].self, from: data) else { return }
+        
+        for template in templates {
+            print(template.key)
+        }
+    }
+
+//    static func importURL(from url: URL) {
+//        guard let data = try? Data(contentsOf: url), let template = try? JSONDecoder().decode(Template.self, from: data) else { return }
+//
+//
+//    }
+}
+
+struct PresetTemplate: Hashable, Codable {
     let name: String
     let timelines: [TableTemplate]
 }
 
-struct TableTemplate: Hashable {
+struct TableTemplate: Hashable, Codable {
     let key: String
     let data: Data
 }
 
-let atech = Template(name: "atech", timelines: [atechA1st, atechA2nd, atechB1st, atechB2nd, atechC1st, atechC2nd])
+let atech = PresetTemplate(name: "atech", timelines: [atechA1st, atechA2nd, atechB1st, atechB2nd, atechC1st, atechC2nd])
 
 let atechA1st = TableTemplate(key: "A Day (1st)", data: Data("[{\"isConflicted\":false,\"id\":\"14BAFCA8-18D7-4D43-BE51-142B7671F43F\",\"name\":\"Period 1\",\"minute\":25,\"hour\":7},{\"isConflicted\":false,\"id\":\"13EE1941-DEC8-4FE1-A187-A45A7385CB37\",\"name\":\"Period 3\",\"minute\":45,\"hour\":8},{\"isConflicted\":false,\"id\":\"A612E678-C8E4-43ED-B7DC-2CBCCAA6E4A2\",\"name\":\"Atech Time\",\"minute\":9,\"hour\":10},{\"isConflicted\":false,\"id\":\"19292217-9B77-40E5-B1A5-EF709DE8800F\",\"name\":\"Lunch\",\"minute\":52,\"hour\":10},{\"isConflicted\":false,\"id\":\"C1CE607C-88EE-4102-9897-75F7D6436FD0\",\"name\":\"Period 5\",\"minute\":22,\"hour\":11},{\"isConflicted\":false,\"id\":\"E244C1AC-270C-4937-97AA-0BCC65766D1C\",\"name\":\"Period 7\",\"minute\":46,\"hour\":12},{\"isConflicted\":false,\"id\":\"3F58B669-7E35-4168-8915-D44DBD1FDD6F\",\"name\":\"\",\"minute\":10,\"hour\":14}]".utf8))
 let atechA2nd = TableTemplate(key: "A Day (2nd)", data: Data("[{\"isConflicted\":false,\"id\":\"6F5C9268-B7FA-4FC8-8A89-757D5D6DCAE0\",\"name\":\"Period 1\",\"minute\":25,\"hour\":7},{\"isConflicted\":false,\"id\":\"963BE812-0955-4389-970C-16433C8BAFAE\",\"name\":\"Period 3\",\"minute\":45,\"hour\":8},{\"isConflicted\":false,\"id\":\"2EC56584-96F1-4D25-B62A-0A91B805A82E\",\"name\":\"Atech Time\",\"minute\":9,\"hour\":10},{\"isConflicted\":false,\"id\":\"863B5750-E8A9-4CBA-88E3-FA393A51BA25\",\"name\":\"Period 5\",\"minute\":52,\"hour\":10},{\"isConflicted\":false,\"id\":\"92531521-0B27-49F8-802B-7EAD89D5F4BD\",\"name\":\"Lunch\",\"minute\":16,\"hour\":12},{\"isConflicted\":false,\"id\":\"9C79D80E-A830-4413-B55F-5605501ED6D0\",\"name\":\"Period 7\",\"minute\":46,\"hour\":12},{\"isConflicted\":false,\"id\":\"1542236C-91BD-4AA4-BAFD-FCF41141EC32\",\"name\":\"\",\"minute\":10,\"hour\":14}]".utf8))

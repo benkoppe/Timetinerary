@@ -142,3 +142,7 @@ func sampleTimeline() -> Timeline {
     
     return Timeline(items: items)
 }
+
+extension Timeline {
+    
+}

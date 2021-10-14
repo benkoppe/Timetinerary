@@ -14,10 +14,15 @@ struct SavedTablesView: View {
     
     @State private var templateAlert = false
     
+    @State private var selection = Set<String>()
+    
+    @State private var showShareSheet = false
+    @State private var shareSheetItems: [Any] = []
+    
     var body: some View {
         ZStack {
             if !savedKeys.isEmpty {
-                List {
+                List(selection: $selection) {
                     ForEach(savedKeys, id: \.self) { key in
                         KeyItem(savedKeys: $savedKeys, key: key)
                     }
@@ -54,10 +59,20 @@ struct SavedTablesView: View {
                 .disabled(savedKeys.isEmpty)
                 .tint(.red)
             }
+            ToolbarItem(placement: .bottomBar) {
+                Button {
+                    shareSelected()
+                } label: {
+                    Image(systemName: "square.and.arrow.up")
+                }
+            }
         }
         .sheet(isPresented: $templateAlert) {
             TemplateView(getTable: getTable(result:))
         }
+        .sheet(isPresented: $showShareSheet, content: {
+            ActivityViewController(activityItems: self.$shareSheetItems)
+        })
         .confirmationDialog("Are you sure you want to clear you saved tables??", isPresented: $deleteAll) {
             Button("Clear All", role: .destructive) {
                 for key in savedKeys {
@@ -72,9 +87,22 @@ struct SavedTablesView: View {
         }
     }
     
+    func shareSelected() {
+        var tables: [TableTemplate] = []
+        
+        for selection in selection {
+            tables.append(TableTemplate(key: selection, data: Timeline(key: selection).getDataSingular()))
+        }
+        
+        guard let urlShare = Template.exportToURL(tables: tables) else { return }
+        
+        shareSheetItems = [urlShare]
+        showShareSheet = true
+    }
+    
     func getTable(result: String?) {
         if let result = result {
-            if let template = templates.first(where: { $0.name == result.lowercased() }) {
+            if let template = presetTemplates.first(where: { $0.name == result.lowercased() }) {
                 for timeline in template.timelines {
                     if !savedKeys.contains(timeline.key) {
                         let newTimeline = Timeline(key: timeline.key)
@@ -186,6 +214,9 @@ struct SavedTablesView: View {
                 Button {
                     let data = Timeline(key: key).getDataSingular()
                     UIPasteboard.general.setValue(String(decoding: data, as: UTF8.self), forPasteboardType: "public.plain-text")
+                    
+                    let template = TableTemplate(key: key, data: data)
+                    let _ = Template.exportToURL(tables: [template])
                 } label: {
                     Text("Copy Data")
                     Image(systemName: "doc.on.doc")
