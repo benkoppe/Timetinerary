@@ -11,6 +11,7 @@ struct SavedTablesView: View {
     @AppStorage("defaultSaved", store: UserDefaults(suiteName: "group.com.benk.timetinerary")) var savedKeys: [String] = []
     
     @State private var deleteAll = false
+    @State private var deleteSome = false
     
     @State private var templateAlert = false
     
@@ -47,23 +48,33 @@ struct SavedTablesView: View {
         .navigationTitle("Saved Tables")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            ToolbarItemGroup(placement: .navigationBarTrailing) {
+            ToolbarItem(placement: .navigationBarTrailing) {
                 EditButton()
                     .disabled(savedKeys.isEmpty)
-                
-                Button(role: .destructive) {
-                    deleteAll = true
-                } label: {
-                    Image(systemName: "trash")
-                }
-                .disabled(savedKeys.isEmpty)
-                .tint(.red)
             }
-            ToolbarItem(placement: .bottomBar) {
+            ToolbarItemGroup(placement: .bottomBar) {
                 Button {
                     shareSelected()
                 } label: {
                     Image(systemName: "square.and.arrow.up")
+                }
+                .disabled(savedKeys.isEmpty)
+                Spacer()
+                if selection.isEmpty {
+                    Button(role: .destructive) {
+                        deleteAll = true
+                    } label: {
+                        Image(systemName: "trash")
+                    }
+                    .disabled(savedKeys.isEmpty)
+                    .tint(.red)
+                } else {
+                    Button(role: .destructive) {
+                        deleteSome = true
+                    } label: {
+                        Image(systemName: "trash")
+                    }
+                    .disabled(savedKeys.isEmpty)
                 }
             }
         }
@@ -73,12 +84,22 @@ struct SavedTablesView: View {
         .sheet(isPresented: $showShareSheet, content: {
             ActivityViewController(activityItems: self.$shareSheetItems)
         })
-        .confirmationDialog("Are you sure you want to clear you saved tables??", isPresented: $deleteAll) {
+        .confirmationDialog("Are you sure you want to clear you saved tables?", isPresented: $deleteAll) {
             Button("Clear All", role: .destructive) {
                 for key in savedKeys {
                     let defaults = UserDefaults.init(suiteName: "group.com.benk.timetinerary")
                     defaults?.removeObject(forKey: key)
                     withAnimation { savedKeys = [] }
+                }
+            }
+        }
+        .confirmationDialog("Are you sure you want to clear these tables?", isPresented: $deleteAll) {
+            Button("Clear Selected", role: .destructive) {
+                for key in selection {
+                    let defaults = UserDefaults.init(suiteName: "group.com.benk.timetinerary")
+                    defaults?.removeObject(forKey: key)
+                    withAnimation { savedKeys.removeAll(where: { selection.contains($0) }) }
+                    selection = []
                 }
             }
         }
@@ -90,8 +111,14 @@ struct SavedTablesView: View {
     func shareSelected() {
         var tables: [TableTemplate] = []
         
-        for selection in selection {
-            tables.append(TableTemplate(key: selection, data: Timeline(key: selection).getDataSingular()))
+        if !selection.isEmpty {
+            for selection in selection {
+                tables.append(TableTemplate(key: selection, data: Timeline(key: selection).getDataSingular()))
+            }
+        } else {
+            for key in savedKeys {
+                tables.append(TableTemplate(key: key, data: Timeline(key: key).getDataSingular()))
+            }
         }
         
         guard let urlShare = Template.exportToURL(tables: tables) else { return }

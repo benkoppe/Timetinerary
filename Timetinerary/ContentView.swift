@@ -11,10 +11,15 @@ import WidgetKit
 struct ContentView: View {
     @Environment(\.scenePhase) var scenePhase
     
+    @AppStorage("defaultSaved", store: UserDefaults(suiteName: "group.com.benk.timetinerary")) var savedKeys: [String] = []
+    
     @StateObject var userColors: UserColors = UserColors()
     @StateObject var timelineWeek: TimelineWeek = TimelineWeek()
     
     @State private var changesMade = false
+    
+    @State private var importAlert = false
+    @State private var importCount = 0
     
     var body: some View {
         TimeTableWeek()
@@ -32,6 +37,33 @@ struct ContentView: View {
                     changesMade = false
                 }
                 Notifications().schedule(for: timelineWeek)
+            }
+            .onOpenURL { url in
+                if url.isFileURL {
+                    let templates = (try? Template.importURL(from: url)) ?? []
+                    
+                    importCount = 0
+                    
+                    for template in templates {
+                        let data = template.data
+                        let key = template.key
+                        let newTimeline = Timeline(key: key)
+                        newTimeline.timelineItems = TimelineItem.getTimelineItems(from: data) ?? []
+                        if newTimeline.timelineItems.count > 0 {
+                            savedKeys.append(key)
+                            newTimeline.save()
+                            importCount += 1
+                        } else {
+                            let defaults = UserDefaults.init(suiteName: "group.com.benk.timetinerary")
+                            defaults?.removeObject(forKey: key)
+                        }
+                    }
+                    
+                    importAlert = true
+                }
+            }
+            .alert("Tables Successfully Imported", isPresented: $importAlert) {} message: {
+                Text("Imported \(importCount) tables.")
             }
     }
 }

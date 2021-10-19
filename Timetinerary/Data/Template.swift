@@ -29,12 +29,10 @@ struct Template: Codable {
         }
     }
     
-    static func importURL(from url: URL) {
-        guard let data = try? Data(contentsOf: url), let templates = try? JSONDecoder().decode([TableTemplate].self, from: data) else { return }
-        
-        for template in templates {
-            print(template.key)
-        }
+    static func importURL(from url: URL) throws -> [TableTemplate] {
+        let data = try Data(contentsOf: url)
+        let templates = try JSONDecoder().decode([TableTemplate].self, from: data)
+        return templates
     }
 
 //    static func importURL(from url: URL) {

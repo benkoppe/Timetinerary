@@ -15,7 +15,7 @@ let tints = IconGroup(name: "Tints", icons: ["Wavy", "Snake", "Blood", "Royal", 
 
 let socials = IconGroup(name: "Social", icons: ["Influencer", "Typing...", "Musical", "280 Characters", "Superspreader"])
 
-let pride = IconGroup(name: "Spectral", icons: ["Baker", "Helms"])
+let pride = IconGroup(name: "Pride", icons: ["Baker", "Helms"])
 
 struct IconGroup: Hashable {
     let name: String?
