@@ -6,9 +6,12 @@
 //
 
 import Foundation
-import WidgetKit
 
-class TimelineWeek: ObservableObject, Identifiable {
+#if os(iOS)
+import WidgetKit
+#endif
+
+class TimelineWeek: ObservableObject, Identifiable, Codable {
     @Published var week: [Timeline]
     var key: String
     
@@ -76,5 +79,23 @@ class TimelineWeek: ObservableObject, Identifiable {
             }
         }
         return nil
+    }
+    
+    enum CodingKeys: CodingKey {
+        case key, week
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        
+        try container.encode(key, forKey: .key)
+        try container.encode(week, forKey: .week)
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        key = try container.decode(String.self, forKey: .key)
+        week = try container.decode([Timeline].self, forKey: .week)
     }
 }

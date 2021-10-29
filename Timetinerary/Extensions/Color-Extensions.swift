@@ -54,6 +54,7 @@ extension Color: Codable {
     }
 }
 
+#if !os(watchOS)
 public extension Color {
     
     static let lightText = Color(UIColor.lightText)
@@ -78,6 +79,7 @@ public extension Color {
 
     // There are more..
 }
+#endif
 
 func colorsEqual(_ lhs: Color, _ rhs: Color) -> Bool {
     func roundrgba(_ color: Color) -> (red: Double, blue: Double, green: Double, alpha: Double) {

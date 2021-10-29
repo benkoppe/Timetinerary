@@ -6,7 +6,10 @@
 //
 
 import SwiftUI
+
+#if !os(watchOS)
 import WidgetKit
+#endif
 
 enum UserColorTypes: String, Equatable {
     case beforeBG, beforeText, duringBG, duringFG, duringText, afterBG, afterText, dayOffBG, dayOffFG, dayOffText

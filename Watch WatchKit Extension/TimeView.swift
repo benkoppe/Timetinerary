@@ -1,17 +1,13 @@
 //
 //  TimeView.swift
-//  Timetinerary
+//  Watch WatchKit Extension
 //
-//  Created by Ben K on 10/7/21.
+//  Created by Ben K on 10/19/21.
 //
 
 import SwiftUI
-import Combine
-import WidgetKit
 
 struct TimeView: View {
-    @Environment(\.dismiss) var dismiss
-    
     @StateObject var timelineWeek: TimelineWeek
     @State private var date = Date()
     
@@ -26,37 +22,25 @@ struct TimeView: View {
     let timer = Timer.publish(every: 0.1, on: .current, in: .common).autoconnect()
     
     var body: some View {
-        NavigationView {
-            ZStack {
-                Text("\(date)")
-                    .hidden()
-                
-                switch moment {
-                case .conflicts:
-                    ConflictsView()
-                case .before(let firstItem):
-                    BeforeView(firstItem: firstItem)
-                case .after:
-                    AfterView()
-                case .during(let item, let nextItem):
-                    DuringView(item: item, nextItem: nextItem)
-                case .empty:
-                    DayOffView(daysSince: timelineWeek.daysTill(date: date, direction: .backward), daysUntil: timelineWeek.daysTill(date: date, direction: .forward))
-                }
+        ZStack {
+            Text("\(date)")
+                .hidden()
+            
+            switch moment {
+            case .conflicts:
+                ConflictsView()
+            case .before(let firstItem):
+                BeforeView(firstItem: firstItem)
+            case .after:
+                AfterView()
+            case .during(let item, let nextItem):
+                DuringView(item: item, nextItem: nextItem)
+            case .empty:
+                DayOffView(daysSince: timelineWeek.daysTill(date: date, direction: .backward), daysUntil: timelineWeek.daysTill(date: date, direction: .forward))
             }
-            .offset(x: 0, y: -20)
-            .navigationBarTitleDisplayMode(.inline)
-            .onReceive(timer) { _ in
-                self.date = Date()
-            }
-            .onAppear {
-                WidgetCenter.shared.reloadAllTimelines()
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Done") { dismiss() }
-                }
-            }
+        }
+        .onReceive(timer) { _ in
+            self.date = Date()
         }
     }
     
@@ -195,14 +179,12 @@ struct TimeView: View {
                             .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
                     }
                 }
-                .padding().padding()
-                .padding(.vertical)
-                .shadow(radius: 20)
+                //.shadow(radius: 20)
                 
                 VStack(alignment: .leading, spacing: 5) {
                     if case .span(let start, let end) = header {
                         Text("\(start) - \(end)")
-                            .font(.system(.caption, design: .rounded))
+                            .font(.system(size: 5, weight: .regular, design: .rounded))
                             .fontWeight(.medium)
                     } else {
                         Text(Date(), style: .time)
@@ -211,7 +193,7 @@ struct TimeView: View {
                     }
                     
                     Text(title)
-                        .font(.system(size: 50, weight: .medium, design: .rounded))
+                        .font(.system(size: 20, weight: .medium, design: .rounded))
                         .minimumScaleFactor(0.5)
                         .lineLimit(1)
                     
@@ -225,7 +207,7 @@ struct TimeView: View {
                     .font(.system(.body, design: .rounded))
                 }
                 .padding(5)
-                .padding(.horizontal, 60)
+                .padding(.horizontal, 10)
                 .foregroundColor(textColor)
             }
             .onReceive(timer) { _ in

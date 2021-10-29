@@ -7,6 +7,7 @@
 
 import SwiftUI
 import WidgetKit
+import WatchConnectivity
 
 struct ContentView: View {
     @Environment(\.scenePhase) var scenePhase
@@ -15,6 +16,8 @@ struct ContentView: View {
     
     @StateObject var userColors: UserColors = UserColors()
     @StateObject var timelineWeek: TimelineWeek = TimelineWeek()
+    
+    var watchConnectivity = WatchConnectivity()
     
     @State private var changesMade = false
     
@@ -27,6 +30,8 @@ struct ContentView: View {
             .environmentObject(timelineWeek)
             .onReceive(NotificationCenter.default.publisher(for: Notification.Name("hasChanged"))) { _ in
                 changesMade = true
+                
+                watchConnectivity.sendChanges(week: timelineWeek, colors: userColors)
             }
             .onAppear {
                 WidgetCenter.shared.reloadAllTimelines()

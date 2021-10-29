@@ -7,7 +7,10 @@
 
 import Foundation
 import SwiftUI
+
+#if !os(watchOS)
 import WidgetKit
+#endif
 
 enum TimelineMoment {
     case empty
@@ -17,7 +20,7 @@ enum TimelineMoment {
     case during(item: TimelineItem, nextItem: TimelineItem)
 }
 
-class Timeline: ObservableObject, Identifiable {
+class Timeline: ObservableObject, Identifiable, Codable {
     var key: String
     
     @Published var timelineItems: [TimelineItem] {
@@ -127,6 +130,24 @@ class Timeline: ObservableObject, Identifiable {
             defaults?.setValue(TimelineItem.getData(array: timelineItems), forKey: key)
             hasChanged()
         }
+    }
+    
+    enum CodingKeys: CodingKey {
+        case key, timelineItems
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        
+        try container.encode(key, forKey: .key)
+        try container.encode(timelineItems, forKey: .timelineItems)
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        key = try container.decode(String.self, forKey: .key)
+        timelineItems = try container.decode([TimelineItem].self, forKey: .timelineItems)
     }
 }
 

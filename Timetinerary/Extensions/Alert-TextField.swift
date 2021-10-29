@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 public struct TextAlert {
     public var title: String // Title of the dialog
