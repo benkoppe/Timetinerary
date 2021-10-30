@@ -1,10 +1,10 @@
-<p href="url" align="center"><img src="Images/AppIcon.png" align="center" height="30%" width="30%" ></a>
+<p align="center"><img src="Images/AppIcon.png" align="center" height="30%" width="30%" ></a>
 <br>
 <br>
-<a href="url"><img src="Images/Schedule.png" align="center" height="22%" width="22%" hspace="10"></a>
-<a href="url"><img src="Images/Timeline.png" align="center" height="22%" width="22%" hspace="10"></a>
-<a href="url"><img src="Images/WidgetNotifications.png" align="center" height="22%" width="22%" hspace="10"></a>
-<a href="url"><img src="Images/Settings.png" align="center" height="22%" width="22%" hspace="10"></a>
+<a><img src="Images/Schedule.png" align="center" height="22%" width="22%" hspace="10"></a>
+<a><img src="Images/Timeline.png" align="center" height="22%" width="22%" hspace="10"></a>
+<a><img src="Images/WidgetNotifications.png" align="center" height="22%" width="22%" hspace="10"></a>
+<a><img src="Images/Settings.png" align="center" height="22%" width="22%" hspace="10"></a>
 
 # Timetinerary
 
